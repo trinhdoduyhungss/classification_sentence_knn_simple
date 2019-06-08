@@ -137,7 +137,7 @@ if (bigdata != null && bigdata != {}) {
         }
         scores_list[k] = scores
     }
-    console.log(scores_list)
+    console.log('scores_list k: ', scores_list)
 }
 function countvalueof_k_rep(arraydata) {
     array_elements = arraydata

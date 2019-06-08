@@ -97,7 +97,7 @@ function knn(k) {
     count(sortedDist)
     let sortcount = Object.values(countelement).sort(function (a, b) { return a - b })
     var maxInNumbers = Math.max.apply(Math, sortcount);
-    console.log(maxInNumbers)
+    console.log('maxInNumbers: ',maxInNumbers)
     for (var neighbor in knn_result) {
         for (var i in countelement) {
             if (countelement[i] == maxInNumbers) {
@@ -109,8 +109,7 @@ function knn(k) {
     }
 }
 
-/* ========<Find k>======== */
 
 knn(3)
-console.log('2 khoảng cách gần nhất: ', sortedDist)
+console.log('3 khoảng cách gần nhất: ', sortedDist)
 console.log('result label: ', results_label)
