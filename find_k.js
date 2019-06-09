@@ -15,6 +15,8 @@ function find_best_k(k) {
     let sortedDist = []
     let countelement = {}
     let sentence_test
+    let k_sentence = []
+    let k_label = []
     function test_train(sentence, lengthdata) {
         let timmot;
         let timhai;
@@ -92,29 +94,41 @@ function find_best_k(k) {
                 break
             }
         }
+        sortedDist = []
         let sortdist = Object.values(knn_result).sort(function (a, b) { return a - b })
         for (let i = 0; i < k; i++) {
             sortedDist.push(sortdist[i])
         }
-        count(sortedDist)
-        let sortcount = Object.values(countelement).sort(function (a, b) { return a - b })
-        var maxInNumbers = Math.max.apply(Math, sortcount);
-        //check label
-        for (var neighbor in knn_result) {
-            for (var i in countelement) {
-                if (countelement[i] == maxInNumbers) {
-                    if (knn_result[neighbor] == i) {
-                        results_label = sentence_data[neighbor]
-                        savedataset[sentence_test] = results_label
-                    }
+        k_sentence = []
+        for (var i in sortedDist) {
+            for (var sentence_resultdist in knn_result) {
+                if (knn_result[sentence_resultdist] == sortedDist[i] && k_sentence.length < k ) {
+                    k_sentence.push(sentence_resultdist)
                 }
             }
         }
+        k_label = []
+        for (var sentence in k_sentence) {
+            k_label.push(sentence_data[k_sentence[sentence]])
+        }
+        countelement = {}
+        count(k_label)
+        let sortcount = Object.values(countelement).sort(function (a, b) { return a - b })
+        var maxInNumbers = Math.max.apply(Math, sortcount);
+        //check label
+        for (var label in countelement) {
+            if (countelement[label] == maxInNumbers) {
+                let results_label = label
+                savedataset[sentence_test] = results_label
+            }
+        }
+
     }
 
     for (var key_sentence in test_sentence_data.bot()) {
         if (key_sentence != undefined) {
             sentence_test = key_sentence
+            //console.log(sentence_test)
             test_train(key_sentence, 1)
             knn(k + 1)
             bigdata[k + 1] = savedataset
@@ -126,6 +140,7 @@ function find_best_k(k) {
 for (var k = 0; k < 10; k++) {
     find_best_k(k)
 }
+//console.log(bigdata)
 let scores_list = {}
 if (bigdata != null && bigdata != {}) {
     for (var k in bigdata) {
@@ -173,10 +188,10 @@ for (var k in vaulek_rep) {
     }
 }
 var bestvalue_K = Math.max.apply(Math, area_k_to_check);
-var bestk 
-for (var k in scores_list){
-    if(scores_list[k] == bestvalue_K){
+var bestk
+for (var k in scores_list) {
+    if (scores_list[k] == bestvalue_K) {
         bestk = k
     }
 }
-console.log('best K: ',bestk)
+console.log('best K: ', bestk)

@@ -7,6 +7,8 @@ let testsen = {}
 let knn_result = {}
 let sortedDist = []
 let countelement = {}
+let k_sentence = []
+let k_label = []
 let results_label
 /* ==========<Train>=========== */
 
@@ -56,7 +58,7 @@ for (var key_sentence in sentence_data) {
     }
 }
 //console.log(dataset)
-let test_sentence = 'quá đáng'
+let test_sentence = 'Fuck you'
 test_train(test_sentence, 1)
 function count(arraydata) {
     array_elements = arraydata
@@ -94,22 +96,30 @@ function knn(k) {
     for (let i = 0; i < k; i++) {
         sortedDist.push(sortdist[i])
     }
-    count(sortedDist)
+    for (var i in sortedDist) {
+        for (var sentence_resultdist in knn_result) {
+            if (knn_result[sentence_resultdist] == sortedDist[i] && k_sentence.length < k ) {
+                k_sentence.push(sentence_resultdist)
+            }
+        }
+    }
+    for (var sentence in k_sentence) {
+        k_label.push(sentence_data[k_sentence[sentence]])
+    }
+    count(k_label)
     let sortcount = Object.values(countelement).sort(function (a, b) { return a - b })
     var maxInNumbers = Math.max.apply(Math, sortcount);
-    console.log('maxInNumbers: ',maxInNumbers)
-    for (var neighbor in knn_result) {
-        for (var i in countelement) {
-            if (countelement[i] == maxInNumbers) {
-                if (knn_result[neighbor] == i) {
-                    results_label = sentence_data[neighbor]
-                }
-            }
+    console.log('maxInNumbers: ', maxInNumbers)
+    for (var label in countelement) {
+        if (countelement[label] == maxInNumbers) {
+            results_label = label
         }
     }
 }
 
-
-knn(3)
+var k = 9
+knn(k)
 console.log('3 khoảng cách gần nhất: ', sortedDist)
+k_sentence != null && k_sentence != [] ? console.log(String(k)+' câu gần nhất: ', k_sentence) : console.log()
+k_label != null && k_label != [] ? console.log(String(k)+' câu gần nhất: ', k_label) : console.log()
 console.log('result label: ', results_label)
