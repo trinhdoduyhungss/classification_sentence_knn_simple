@@ -1,4 +1,4 @@
-# classification_sentence_knn_simple
+# classification_Vietnamese_sentence_knn_simple
 
 
 - > It's example just fun.
@@ -7,13 +7,9 @@
 - > I hope it can help you fun and learn KNN to easy.
 - > Try it, Good luck <3 !!!!
 
-```
-That is result for find_k.js : best K : 5 =))) It isn't good but not bad :V That was an objective result in 10 test rounds
-The accuracy is 80% for 2052 bad words and 68 classified sentences 
-```
 
-# Data
-| Câu | Loại |
+# Data classified sentences ready for KNN
+| Sentence | Type |
 |--------------|-------|
 | Thứ phò cẩu | Câu bị nghi vấn |
 |Con cẩu sanh|Câu bị nghi vấn|
@@ -29,3 +25,25 @@ The accuracy is 80% for 2052 bad words and 68 classified sentences
 |bình thường, cx ko hay chi mấy|Câu bình thường|
 |Thay ava chào năm mới cho đỡ mốc|Câu bình thường|
 |..Xem thêm tại datasentence.js...|...Xem thêm tại datasentence.js..|
+
+# Bad words
+|Word|
+|----|
+|cc|
+|đồ chó|
+|clon|
+|đm|
+|địt con mẹ|
+|địt mẹ|
+|chu cái mỏ lồn|
+|súc vật|
+|Đạp mày nát bét|
+|Đéo|
+|Đè bẹp mày|
+|Khinh tao à|
+|...Xem thêm tại arraytrainbot.js...|
+
+```
+That is result for find_k.js : best K : 5 =))) It isn't good but not bad :V That was an objective result in 10 test rounds
+The accuracy is 80% for 2052 bad words (word + sentence contain bad words) and 68 classified sentences 
+```
