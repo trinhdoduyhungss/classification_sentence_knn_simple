@@ -24,7 +24,7 @@
 |xịt sữa|Câu bị nghi vấn|
 |bình thường, cx ko hay chi mấy|Câu bình thường|
 |Thay ava chào năm mới cho đỡ mốc|Câu bình thường|
-|..Xem thêm tại datasentence.js...|...Xem thêm tại datasentence.js..|
+|..See more at datasentence.js...|...See more at datasentence.js..|
 
 # Bad words
 |Word|
@@ -41,7 +41,7 @@
 |Đéo|
 |Đè bẹp mày|
 |Khinh tao à|
-|...Xem thêm tại arraytrainbot.js...|
+|...See more at arraytrainbot.js...|
 
 # List K test
 |K|Correct prediction|
