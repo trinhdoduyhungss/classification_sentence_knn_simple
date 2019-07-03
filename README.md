@@ -43,7 +43,7 @@
 |Khinh tao à|
 |...See more at arraytrainbot.js...|
 
-# List K test
+# List K test - get it in file find_k.js
 |K|Correct prediction|
 |---|----|
 |1|56|
