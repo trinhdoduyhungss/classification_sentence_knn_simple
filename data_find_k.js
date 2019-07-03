@@ -1,9 +1,23 @@
 module.exports = {
     bot: function() {
        return {
+        "Thứ phò cẩu":"Câu bị nghi vấn",
+        "Con cẩu sanh":"Câu bị nghi vấn",
+        "Bươm bướm dối trá không thấy ngượng mồm":"Câu bị nghi vấn",
+        "Nhớ gia đình ạ":"Câu bình thường",
+        "Bản thân của ngày xưa":"Câu bình thường",
+        "Gặt hái được nhiều thành công":"Câu bình thường",
+        "May mắn lắm đó nha":"Câu bình thường",
+        "Tui nói ông nghe nè, tui yêu ông":"Câu bình thường",
         'Thương em là điều anh không thể ngờ':'Câu bình thường',
         "em muốn uống trà sữa":"Câu bình thường",
         "xịt sữa":"Câu bị nghi vấn",
+        "bình thường, cx ko hay chi mấy.":"Câu bình thường",
+        "Thay ava chào năm mới cho đỡ mốc":"Câu bình thường",
+        "100 là đổi từ 85% ra 85 phần 100 đó bạn":"Câu bình thường",
+        "Hay!":"câu bình thường",
+        "chính sách trả góp như thế nào ạ ?":"Câu bình thường",
+        "Ngầu =))))":"Câu bình thường",
         "vai lolll":"Câu bị nghi vấn",
         "chó":"Câu bị nghi vấn",
         "cười ị":"Câu bị nghi vấn",
@@ -15,7 +29,7 @@ module.exports = {
         "t lạy dưới lol t lạy lên":"Câu bị nghi vấn",
         "duma đỉnh":"Câu bị nghi vấn",
         "học để xử mấy mẹ hàng xóm":"Câu bị nghi vấn",
-        'quá đáng': 'Câu bình thường',
+        'quá đáng': 'Câu bị nghi vấn',
         'Khỏi sợ cưng, cưng dính chị có cách': 'Câu bị nghi vấn',
         'Bitch naneun solo': 'Câu bị nghi vấn',
         'Ngành IoT trong chương trình đào tạo của FPoly': 'Câu bình thường',
@@ -48,7 +62,13 @@ module.exports = {
         'Thương ai nói đi đừng ngại': 'Câu bình thường',
         'Độ ta không độ nàng':'Câu bình thường',
         'Anh không thể biến mùa hạ thành đông nhưng cũng không thể khiến em về bên anh': 'Câu bình thường',
-        'Những người anh em thiện lành của chúng ta đó': 'Câu bị nghi vấn'
+        'Những người anh em thiện lành của chúng ta đó': 'Câu bị nghi vấn',
+        "Lần đầu tiên đi chơi gái":"Câu bị nghi vấn",
+        "Đặt chân đến chốn này":"Câu bình thường",
+        "Đẹp tuyệt":"Câu bình thường",
+        "Quá hay":"Câu bình thường",
+        "Tuổi thơ":"Câu bình thường",
+        "Có tour bắt đầu ở đà nẵng ko zậy ad":"Câu bình thường"
        }  
     }
 }

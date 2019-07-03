@@ -9,6 +9,7 @@ let sortedDist = []
 let countelement = {}
 let k_sentence = []
 let k_label = []
+let accuracy
 let results_label
 /* ==========<Train>=========== */
 
@@ -18,7 +19,7 @@ function test_train(sentence, lengthdata) {
     let y = 0;
     let test = []
     let word;
-    sentence_lowerCase = sentence.toLowerCase()
+    let sentence_lowerCase = sentence.toLowerCase()
     bot.forEach(myFunc);
     function myFunc(item) {
         //Chạy duyệt qua từng câu trong arraytrain, thu thập các đặc trưng trùng khớp giữa từng câu trong arraytrain và câu test
@@ -27,8 +28,8 @@ function test_train(sentence, lengthdata) {
             word = item.split(" ")
             word.forEach(mytrain)
             function mytrain(itemtrain) {
-                timhai = sentence_lowerCase.indexOf(itemtrain.toLowerCase())// Đưa cả hai vế về cùng một kiểu viết thường tất cả các chữ cái
-                if (timhai != -1 && timhai >= 1 && sentence_lowerCase.slice(timhai - 1, timhai).indexOf(" ") != -1) { // Kiểm tra việc split câu có chuẩn hay chưa và bắt đầu thu thập đặc trưng khớp
+                timhai = sentence_lowerCase.lastIndexOf(itemtrain.toLowerCase())// Đưa cả hai vế về cùng một kiểu viết thường tất cả các chữ cái
+                if (timhai != -1  && sentence_lowerCase.slice(timhai - 1, timhai).lastIndexOf(" ") != -1) { // Kiểm tra việc split câu có chuẩn hay chưa và bắt đầu thu thập đặc trưng khớp
                     test.push(itemtrain.toLowerCase())
                 }
             }
@@ -43,10 +44,11 @@ function test_train(sentence, lengthdata) {
         return arr.filter((value, index, arr) => arr.indexOf(value) === index);
     }
     let ans = deduplicate(test);
+    let split_sentence = sentence.split(" ")
     if (lengthdata > 2) {
-        dataset[sentence] = [sentence.length, ans.length]
+        dataset[sentence] = [ans.length/split_sentence.length, ans.length]
     } else {
-        testsen[sentence] = [sentence.length, ans.length]
+        testsen[sentence] = [ans.length/split_sentence.length, ans.length]
     }
 }
 
@@ -58,7 +60,7 @@ for (var key_sentence in sentence_data) {
     }
 }
 //console.log(dataset)
-let test_sentence = 'Fuck you'
+let test_sentence = 'Tổ quốc'
 test_train(test_sentence, 1)
 function count(arraydata) {
     array_elements = arraydata
@@ -115,11 +117,13 @@ function knn(k) {
             results_label = label
         }
     }
+    accuracy = Math.round((maxInNumbers/k)*100)
 }
 
-var k = 9
+var k = 5
 knn(k)
-console.log('3 khoảng cách gần nhất: ', sortedDist)
+console.log(String(k)+' khoảng cách gần nhất: ', sortedDist)
 k_sentence != null && k_sentence != [] ? console.log(String(k)+' câu gần nhất: ', k_sentence) : console.log()
 k_label != null && k_label != [] ? console.log(String(k)+' câu gần nhất: ', k_label) : console.log()
 console.log('result label: ', results_label)
+console.log('Độ chính xác', String(accuracy)+'%' )

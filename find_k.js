@@ -32,13 +32,13 @@ function find_best_k(k) {
                 word = item.split(" ")
                 word.forEach(mytrain)
                 function mytrain(itemtrain) {
-                    timhai = sentence_lowerCase.indexOf(itemtrain.toLowerCase())// Đưa cả hai vế về cùng một kiểu viết thường tất cả các chữ cái
-                    if (timhai != -1 && timhai >= 1 && sentence_lowerCase.slice(timhai - 1, timhai).indexOf(" ") != -1) { // Kiểm tra việc split câu có chuẩn hay chưa và bắt đầu thu thập đặc trưng khớp
+                    timhai = sentence_lowerCase.lastIndexOf(itemtrain.toLowerCase())// Đưa cả hai vế về cùng một kiểu viết thường tất cả các chữ cái
+                    if (timhai != -1 && sentence_lowerCase.slice(timhai - 1, timhai).lastIndexOf(" ") != -1) { // Kiểm tra việc split câu có chuẩn hay chưa và bắt đầu thu thập đặc trưng khớp
                         test.push(itemtrain.toLowerCase())
                     }
                 }
             } else {
-                timmot = sentence_lowerCase.indexOf(item.toLowerCase())
+                timmot = sentence_lowerCase.lastIndexOf(item.toLowerCase())
                 if (timmot != -1) {
                     test.push(item.toLowerCase())
                 }
@@ -48,10 +48,11 @@ function find_best_k(k) {
             return arr.filter((value, index, arr) => arr.indexOf(value) === index);
         }
         let ans = deduplicate(test);
+        let split_sentence = sentence.split(" ")
         if (lengthdata > 2) {
-            dataset[sentence] = [sentence.length, ans.length]
+            dataset[sentence] = [ans.length/split_sentence.length, ans.length]
         } else {
-            testsen[sentence] = [sentence.length, ans.length]
+            testsen[sentence] = [ans.length/split_sentence.length, ans.length]
         }
     }
 
@@ -179,9 +180,20 @@ function countvalueof_k_rep(arraydata) {
 }
 let sort_scores_list = Object.values(scores_list).sort(function (a, b) { return a - b }) // Object.values(<name_object>).sort(function (a, b) { return a - b }) best solution convert object to array
 countvalueof_k_rep(sort_scores_list)
+// Get k (part 1)
 let sort_valueofk_rep_list = Object.values(vaulek_rep).sort(function (a, b) { return a - b })
 var maxInNumbers = Math.max.apply(Math, sort_valueofk_rep_list);
 let area_k_to_check = []
+for (var k in vaulek_rep) {
+    if (vaulek_rep[k] == maxInNumbers) {
+        area_k_to_check.push(k)
+        delete vaulek_rep[k]
+    }
+}
+
+// Get k (part 2)
+sort_valueofk_rep_list = Object.values(vaulek_rep).sort(function (a, b) { return a - b })
+maxInNumbers = Math.max.apply(Math, sort_valueofk_rep_list);
 for (var k in vaulek_rep) {
     if (vaulek_rep[k] == maxInNumbers) {
         area_k_to_check.push(k)
@@ -191,7 +203,9 @@ var bestvalue_K = Math.max.apply(Math, area_k_to_check);
 var bestk
 for (var k in scores_list) {
     if (scores_list[k] == bestvalue_K) {
-        bestk = k
+        if(Number(k)%2 != 0 ){
+            bestk = k
+        }
     }
 }
 console.log('best K: ', bestk)

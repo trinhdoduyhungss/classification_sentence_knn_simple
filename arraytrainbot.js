@@ -7,7 +7,8 @@ module.exports = {
        "đm",
        "địt con mẹ" ,
        "địt mẹ" , 
-       "chu cái mỏ lồn" , 
+       "chu cái mỏ lồn" ,
+       "súc vật", 
        "Địt tằng tằng vào sâu bên trong" ,
        "mặt lòn" ,
        "Thằng mặt cặc" ,
@@ -56,6 +57,8 @@ module.exports = {
        "Đè bẹp mày",
        "Khinh tao à",
        "cái con cặc",
+       "bướm",
+       "phò cẩu sanh",
        "Chink, Dickhead, Dyke, Fag, faggot , Gook , Limey , Motherfucker, Queer, Sucker, Whore, Slut, Drop dead,  bastard, Dick" ,
        "lột đồ nhau" ,
        "Cộng Sản, Quần Què, #DMCS, Bò Đỏ, con cặc, shut fuck, STFU, #STFU, suck my dick, Penis, Pussy, pussy, Việt Nam Cộng Hoà muôn năm, Đảng Lồn, bợ đít, nâng bi, cái lồn gì vậy, cái lồn gì thế, mặt cặc, pussy face, chó, địt, bú buồi, liếm cu, bú lồn cành cạch, nứng lồn mong manh, quện, đĩ chó, Sấp Mặt Lồn, ưng đụ tao à, cái đĩ mẹ gì vậy, đá phò, dòng đĩ cốt cách, phò năng, đĩ có học, đĩ cộng sản, đĩ cách mạng, nứng lồn, bóng long xiên, địt moẹ moài, lồn, đĩ nứng lồn, chim hưng phấn, nứng lồn mong manh, chịch, bú cu, thông đít, Bash, óc chó, ngu chó, óc lồn, đầu khấc, nứng lồn cộng sản, pussy wet, sục cặc, hột le"];
