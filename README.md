@@ -43,6 +43,22 @@
 |Khinh tao à|
 |...Xem thêm tại arraytrainbot.js...|
 
+# List K test
+|K|Value|
+|---|----|
+|1|56|
+|2|55|
+|3|55|
+|2|55|
+|3|55|
+|4|55|
+|5|55|
+|6|51|
+|7|51|
+|8|51|
+|9|51|
+|10|51|
+
 ```
 That is result for find_k.js : best K : 5 =))) It isn't good but not bad :V That was an objective result in 10 test rounds
 The accuracy is 80% for 2052 bad words (word + sentence contain bad words) and 68 classified sentences 
