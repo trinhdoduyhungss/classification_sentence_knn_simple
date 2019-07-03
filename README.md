@@ -44,7 +44,7 @@
 |...Xem thêm tại arraytrainbot.js...|
 
 # List K test
-|K|Value|
+|K|Correct prediction|
 |---|----|
 |1|56|
 |2|55|
