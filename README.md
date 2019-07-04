@@ -61,5 +61,5 @@
 
 ```
 That is result for find_k.js : best K : 5 =))) It isn't good but not bad :V That was an objective result in 10 test rounds
-The accuracy is 80% for 2052 bad words (word + sentence contain bad words) and 68 classified sentences 
+The accuracy is 80% for 2237 bad words (word + sentence contain bad words) and 85 classified sentences 
 ```
