@@ -46,20 +46,18 @@
 # List K test - get it in file find_k.js
 |K|Correct prediction|
 |---|----|
-|1|56|
-|2|55|
-|3|55|
-|2|55|
-|3|55|
-|4|55|
-|5|55|
-|6|51|
-|7|51|
-|8|51|
-|9|51|
-|10|51|
+|1|74|
+|2|69|
+|3|74|
+|4|72|
+|5|74|
+|6|71|
+|7|71|
+|8|71|
+|9|71|
+|10|71|
 
 ```
 That is result for find_k.js : best K : 5 =))) It isn't good but not bad :V That was an objective result in 10 test rounds
-The accuracy is 80% for 2237 bad words (word + sentence contain bad words) and 85 classified sentences 
+The accuracy is 86% for 2237 bad words (word + sentence contain bad words) and 85 classified sentences 
 ```

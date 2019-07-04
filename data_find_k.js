@@ -85,7 +85,8 @@ module.exports = {
         "bitch giọng mẹ ghe":"Câu bị nghi vấn",
         "dm":"Câu bị nghi vấn",
         "chửi người ta mà mày ziên ghê đĩ":"Câu bị nghi vấn",
-        "Haizzz thứ khốn nạn tụi bây":"Câu bị nghi vấn"
+        "Haizzz thứ khốn nạn tụi bây":"Câu bị nghi vấn",
+        "Đi làm gái ngành":"Câu bị nghi vấn"
        }  
     }
 }

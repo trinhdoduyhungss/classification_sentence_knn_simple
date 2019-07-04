@@ -29,6 +29,7 @@ module.exports = {
        "đmcs" ,
        "cocc",
        "chơi gái phò",
+       "Gái ngành",
        "Lần đầu",
        "#ĐMCS, #đmcs" ,
        "thằng con cán bộ" ,
