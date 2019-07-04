@@ -9,7 +9,6 @@ let bigdata = {}
 let vaulek_rep = {}
 function find_best_k(k) {
     let knn_result = {}
-    var dataset = {}
     let savedataset = {}
     let testsen = {}
     let sortedDist = []
@@ -17,6 +16,7 @@ function find_best_k(k) {
     let sentence_test
     let k_sentence = []
     let k_label = []
+    var dataset = {}
     function test_train(sentence, lengthdata) {
         let timmot;
         let timhai;
