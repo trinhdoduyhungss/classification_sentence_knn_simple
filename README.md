@@ -1,7 +1,18 @@
-# classification_Vietnamese_sentence_knn_simple
+# Introduction
+
+Welcome to simple classification project usin KNN algorithm | K - Nearest Neighbor algorithm
+- Fristly, let thank for contributing the "Bad words" data of many highschool students at Danang city.
+- Secondly, I hope you will have the funny time in this project. I had tried editing and customizing my code in the easiest way, which can help you understand KNN algorithm and how to implement it on a project.
+
+In summary, it also contained Auto Find the best K algorithm for KNN. A powerful tool that can save your time. The best K is K:
+- The closest neighbor can affect the test accuracy on all your data the lowest
+- It is NOT 1 - because you need to be objective
+- It is NOT even number - because you use the voting in KNN, the label of the new point is what the label has more quantity, so if you have 2 blue and 2 red, the system will be confusing.
 
 
-- > It's example just fun.
+# A few notes about classification_Vietnamese_sentence_knn_simple project
+
+- > It's example just fun. But you can use it in spam or impolite classification.
 - > You should run find_k.js to get best k before run testtrainwithknn.js.
 - > All is javascript and I don't use any library to build it.
 - > I hope it can help you fun and learn KNN to easy.
@@ -9,7 +20,7 @@
 
 
 # Data classified sentences ready for KNN
-| Sentence | Type |
+| Sentence | Label |
 |--------------|-------|
 | Thứ phò cẩu | Câu bị nghi vấn |
 |Con cẩu sanh|Câu bị nghi vấn|
@@ -57,7 +68,16 @@
 |9|71|
 |10|71|
 
+```diff
+That is result for find_k.js : best K : 5 :grin: It isn't good but not bad :wink: That was an objective result in 10 test rounds
+The accuracy is 
+- 74% for 2237 bad words* @@ 
+*: (word + sentence contain bad words) and 85 classified sentences 
 ```
-That is result for find_k.js : best K : 5 =))) It isn't good but not bad :V That was an objective result in 10 test rounds
-The accuracy is 86% for 2237 bad words (word + sentence contain bad words) and 85 classified sentences 
-```
+# The flow
+
+If you want to try with your data or do not understand how it work, please see it in this picture, you can see its flow.
+
+![Flow](./assets/flow.jpg)
+
+## You need preparing data first (bad words list, types of sentences) and find out the best K. Finnal, use the best K has been found for testing. The main flow is the blue lines.
