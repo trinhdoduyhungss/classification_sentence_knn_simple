@@ -8,7 +8,7 @@ In summary, it also contained Auto Find the best K algorithm for KNN. A powerful
 - The closest neighbor can affect the test accuracy on all your data the lowest
 - It is NOT 1 - because you need to be objective
 - It is NOT even number - because you use the voting in KNN, the label of the new point is what the label has more quantity, so if you have 2 blue and 2 red, the system will be confusing.
-
+- A second largest number
 
 # A few notes about classification_Vietnamese_sentence_knn_simple project
 
@@ -16,7 +16,7 @@ In summary, it also contained Auto Find the best K algorithm for KNN. A powerful
 - > You should run find_k.js to get best k before run testtrainwithknn.js.
 - > All is javascript and I don't use any library to build it.
 - > I hope it can help you fun and learn KNN to easy.
-- > Try it, Good luck <3 !!!!
+- > Try it, Good luck !!!!
 
 # The flow
 
@@ -77,7 +77,7 @@ If you want to try with your data or do not understand how it work, please see i
 |10|71|
 
 ```diff
-That is result for find_k.js : best K : 5 :grin: It isn't good but not bad :wink: That was an objective result in 10 test rounds
+That is result for find_k.js : best K : 5 . It isn't good but not bad. That was an objective result in 10 test rounds
 The accuracy is 
 - 74% for 2237 bad words* @@ 
 *: (word + sentence contain bad words) and 85 classified sentences 
