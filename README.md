@@ -78,6 +78,6 @@ The accuracy is
 
 If you want to try with your data or do not understand how it work, please see it in this picture, you can see its flow.
 
-![Flow](./assets/flow.jpg)
+![Flow](./assets/flow.JPG)
 
 ## You need preparing data first (bad words list, types of sentences) and find out the best K. Finnal, use the best K has been found for testing. The main flow is the blue lines.
