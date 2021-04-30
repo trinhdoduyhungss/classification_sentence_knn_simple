@@ -45,6 +45,18 @@ If you want to try with your data or do not understand how it work, please see i
 |Thay ava chào năm mới cho đỡ mốc|Câu bình thường|
 |..See more at datasentence.js...|...See more at datasentence.js..|
 
+# The structure of the sentence point
+You need to convert sentences into points on a spatial graph (2D - (x, y)) before using KNN to classify. So, how I did it?
+Follow this caculation formula:
+
+    x = len(bad words in sentence)/len(sentence)
+
+    y = sentence
+
+In the x, I removed duplicate bad words in each sentence before dividing.
+
+And I used the Euclidean distance to calculate the relationship between two points
+
 # Bad words
 |Word|
 |----|
