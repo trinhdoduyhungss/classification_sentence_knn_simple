@@ -51,11 +51,11 @@ Follow this caculation formula:
 
     x = len(bad words in sentence)/len(sentence)
 
-    y = sentence
+    y = len(bad words in sentence)
 
 In the x, I removed duplicate bad words in each sentence before dividing.
 
-And I used the Euclidean distance to calculate the relationship between two points
+And I used the Euclidean distance to calculate the relationship between two points.
 
 # Bad words
 |Word|
