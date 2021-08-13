@@ -1,66 +1,65 @@
 const myModule = require('./arraytrainbot');
 const sentences_bot = require('./datasentence')
 const sentence_data = sentences_bot.bot()
-let bot = myModule.bot();
 let dataset = {}
 let testsen = {}
-let knn_result = {}
-let sortedDist = []
-let countelement = {}
-let k_sentence = []
-let k_label = []
-let accuracy
-let results_label
-/* ==========<Train>=========== */
-
-module.exports.check_sensitive = function(text){
-
-    function test_train(sentence, lengthdata) {
-        let timmot;
-        let timhai;
-        let y = 0;
-        let test = []
-        let word;
-        let sentence_lowerCase = sentence.toLowerCase()
-        bot.forEach(myFunc);
-        function myFunc(item) {
-            //Chạy duyệt qua từng câu trong arraytrain, thu thập các đặc trưng trùng khớp giữa từng câu trong arraytrain và câu test
-            y = item.length
-            if (y >= 8) { // y >= 8 tức là y có thể là một câu văn chứ không phải một từ riêng lẻ
-                word = item.split(" ")
-                word.forEach(mytrain)
-                function mytrain(itemtrain) {
-                    timhai = sentence_lowerCase.lastIndexOf(itemtrain.toLowerCase())// Đưa cả hai vế về cùng một kiểu viết thường tất cả các chữ cái
-                    if (timhai != -1  && sentence_lowerCase.slice(timhai - 1, timhai).lastIndexOf(" ") != -1) { // Kiểm tra việc split câu có chuẩn hay chưa và bắt đầu thu thập đặc trưng khớp
-                        test.push(itemtrain.toLowerCase())
-                    }
-                }
-            } else {
-                timmot = sentence_lowerCase.indexOf(item.toLowerCase())
-                if (timmot != -1) {
-                    test.push(item.toLowerCase())
+let bot = myModule.bot();
+function test_train(sentence, lengthdata) {
+    let timmot;
+    let timhai;
+    let y = 0;
+    let test = []
+    let word;
+    let sentence_lowerCase = sentence.toLowerCase()
+    bot.forEach(myFunc);
+    function myFunc(item) {
+        //Chạy duyệt qua từng câu trong arraytrain, thu thập các đặc trưng trùng khớp giữa từng câu trong arraytrain và câu test
+        y = item.length
+        if (y >= 8) { // y >= 8 tức là y có thể là một câu văn chứ không phải một từ riêng lẻ
+            word = item.split(" ")
+            word.forEach(mytrain)
+            function mytrain(itemtrain) {
+                timhai = sentence_lowerCase.lastIndexOf(itemtrain.toLowerCase())// Đưa cả hai vế về cùng một kiểu viết thường tất cả các chữ cái
+                if (timhai != -1  && sentence_lowerCase.slice(timhai - 1, timhai).lastIndexOf(" ") != -1) { // Kiểm tra việc split câu có chuẩn hay chưa và bắt đầu thu thập đặc trưng khớp
+                    test.push(itemtrain.toLowerCase())
                 }
             }
-        }
-        function deduplicate(arr) { // loại bỏ các từ trùng lặp
-            return arr.filter((value, index, arr) => arr.indexOf(value) === index);
-        }
-        let ans = deduplicate(test);
-        let split_sentence = sentence.split(" ")
-        if (lengthdata > 2) {
-            dataset[sentence] = [ans.length/split_sentence.length, ans.length]
         } else {
-            testsen[sentence] = [ans.length/split_sentence.length, ans.length]
+            timmot = sentence_lowerCase.indexOf(item.toLowerCase())
+            if (timmot != -1) {
+                test.push(item.toLowerCase())
+            }
         }
     }
+    function deduplicate(arr) { // loại bỏ các từ trùng lặp
+        return arr.filter((value, index, arr) => arr.indexOf(value) === index);
+    }
+    let ans = deduplicate(test);
+    let split_sentence = sentence.split(" ")
+    if (lengthdata > 2) {
+        dataset[sentence] = [ans.length/split_sentence.length, ans.length]
+    } else {
+        testsen[sentence] = [ans.length/split_sentence.length, ans.length]
+    }
+}
 
-    for (var key_sentence in sentence_data) {
-        if (key_sentence != undefined) {
-            test_train(key_sentence, Object.keys(sentence_data).length)
-        } else {
-            break
-        }
+for (var key_sentence in sentence_data) {
+    if (key_sentence != undefined) {
+        test_train(key_sentence, Object.keys(sentence_data).length)
+    } else {
+        break
     }
+}
+module.exports.check_sensitive = function(text){
+    /* ==========<Train>=========== */
+    let knn_result = {}
+    let sortedDist = []
+    let countelement = {}
+    let k_sentence = []
+    let k_label = []
+    let accuracy = 0
+    let results_label
+
     //console.log(dataset)
     let test_sentence = text
     test_train(test_sentence, 1)
@@ -121,7 +120,6 @@ module.exports.check_sensitive = function(text){
         }
         accuracy = Math.round((maxInNumbers/k)*100)
     }
-
     var k = 5
     knn(k)
     console.log(String(k)+' khoảng cách gần nhất: ', sortedDist)
