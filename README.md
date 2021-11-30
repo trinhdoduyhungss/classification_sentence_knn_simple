@@ -14,8 +14,8 @@ In summary, it also contained Auto Find the best K algorithm for KNN. A powerful
 
 - > It's example just fun. But you can use it in spam or impolite classification.
 - > You should run find_k.js to get best k before run testtrainwithknn.js.
-- > All is javascript and I don't use any library to build it.
-- > I hope it can help you fun and learn KNN to easy.
+- > Only use javascript and don't contain any library to build it.
+- > I hope it can help you fun and learn KNN easier.
 - > Try it, Good luck !!!!
 
 # The flow
